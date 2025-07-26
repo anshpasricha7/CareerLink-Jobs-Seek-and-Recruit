@@ -21,7 +21,7 @@ const sendUserProfile = async (user, email) => {
       <p><strong>Email:</strong> ${user.email}</p>
       <p><strong>Phone:</strong> ${user.phone}</p>
       <p><strong>Age:</strong> ${user.age}</p>
-      <p><strong>Experience:</strong> ${user.experience}</p>
+      <p><strong>Experience:</strong> ${user.experience} years</p>
       <p><strong>Profile Picture:</strong> Attached below</p>
       <p><strong>Resume:</strong> Attached below</p>
     `,
