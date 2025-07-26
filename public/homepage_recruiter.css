@@ -1,0 +1,41 @@
+img{
+    height: 100px;
+  width: 100px;
+  object-fit: contain;
+  margin: 0 auto; /* Center the image */
+}
+.card{
+  margin:5%;
+  border-radius: 5%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.03);
+
+
+}
+
+.mb-3{
+  text-align: center;
+  padding: 3%;
+}
+#search{
+    padding: 10px 20px;
+    margin-right: 5%;
+    margin-bottom: -2%;
+    margin-top: 2%;
+  width:40%;
+  border-radius: 999px;
+}
+#search:focus{
+  border-color: #2563eb;
+ 
+}
+main{
+  margin:5%;
+  margin-top: -1%;
+}
+
+
+

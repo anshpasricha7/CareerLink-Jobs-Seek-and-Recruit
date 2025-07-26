@@ -1,0 +1,7 @@
+.heading  {
+    color: rgb(167, 46, 119);
+}
+
+form , .heading{
+    margin-left: 15%;
+}

@@ -1,0 +1,82 @@
+.mb-3{
+ 
+  padding: 3%;
+  
+}
+#search{
+    margin-left: -4%;
+    padding: 10px 20px;
+    margin-right: 5%;
+   
+  width:100%;
+  border-radius: 999px;
+}
+#search:focus{
+  border-color: #2563eb;
+ 
+}
+main{
+    display: flex;
+}
+.left{
+    display: inline-block;
+    padding-top: 5%;
+    width:25%;
+    height:500px;
+}
+.submit_jobSeeker{
+    margin-top: 10%;
+   margin-left: 35%;
+}
+.right{
+
+    display: inline-block;
+    width:100vw;
+    margin: 10px;
+  
+
+}
+img{
+    height: 100px;
+  width: 100px;
+  object-fit: contain;
+  margin: 0 auto; /* Center the image */
+}
+.card{
+  margin:5%;
+  border-radius: 5%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.03);
+
+
+}
+
+.col{
+    width:40%;
+    height: 30%;
+    margin:2%;
+}
+/* Normal state */
+/* Normal state for the specific "Apply" button */
+/* Combining classes makes it more specific than Bootstrap's generic .btn-outline-primary */
+.btn.btn-outline-primary.cardbtn {
+    color: green; /* Text color */
+    border-color: green; /* Border color */
+    background-color: transparent; /* Ensures it's clear as an outline button */
+    /* Add !important if truly desperate, but try to avoid it first. */
+    /* e.g., color: green !important; */
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Hover state for the specific "Apply" button */
+.btn.btn-outline-primary.cardbtn:hover {
+    background-color: green; /* Solid green background on hover */
+    color: white; /* White text on hover for contrast */
+    border-color: green; /* Green border on hover to match background */
+}
+.profilePic{
+  margin-left: 60%;
+}

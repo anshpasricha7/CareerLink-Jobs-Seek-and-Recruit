@@ -1,0 +1,49 @@
+<main>
+  <div class="mb-3">
+    <form action="/filterJobs_recruiter" method="POST">
+        <input type="text" class="search_jobType" name="search" id="search" placeholder="Search by company name or job type separated by commas"  />
+      <button type="submit" class="btn btn-primary register"
+        style="background-color: rgb(167, 46, 119); border-color: rgb(167, 46, 119);"
+        onmouseover="this.style.backgroundColor='white'; this.style.borderColor='rgb(167, 46, 119)'; this.style.color='rgb(167, 46, 119)'"
+        onmouseout="this.style.backgroundColor='rgb(167, 46, 119)'; this.style.color='white'">
+        Submit
+      </button>
+      </form>
+      </div>
+  <h2>Jobs posted:</h2>
+  <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-3">
+    <% if(jobs){ jobs.forEach(job => { %>
+      <div class="col">
+        <div class="card h-100 shadow-sm small-card">
+          
+          <% if (job.logo) { %>
+            <img src=<%= job.logo %> class="card-img-top" alt="Job Image">
+          <% } else { %>
+            <img src="/images/default-job.jpg" class="card-img-top" alt="Default Image">
+          <% } %>
+
+          <div class="card-body">
+            <h5 class="card-title"><%= job.company%></h5>
+            <h6 class="card-title"><%= job.jobType %></h6>
+             <p class="card-text">
+              
+              <strong>Location:</strong> <%= job.location %> years
+            </p>
+            <p class="card-text">
+              
+              <strong>Experience:</strong> <%= job.experience %> years
+            </p>
+            <div class="d-flex justify-content-between">
+              <a href="/jobs/<%= job.id %>" class="btn btn-sm btn-outline-primary cardbtn">View</a>
+              <a href="/editJob/<%=job.id%>" class="btn btn-sm btn-outline-warning cardbtn">Edit</a>
+              <form action="/deleteJob/<%= job.id %>" method="POST" style="display:inline;">
+                <button type="submit" class="btn btn-sm btn-outline-danger cardbtn">Delete</button>
+              </form>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    <% }); } %>
+  </div>
+</main>

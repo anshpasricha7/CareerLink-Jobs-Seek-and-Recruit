@@ -1,0 +1,73 @@
+<main>
+    
+    <div class="left">
+        <form action="/filterByParameters" method="POST">
+      <div class="mb-3">
+        <input type="text" class="search_jobType" name="location" id="search" placeholder="Search by location"  />
+      
+    </div> 
+      <div class="mb-3">
+        <input type="text" class="search_jobType" name="skills" id="search" placeholder="Search by skills seperated by commas"  />
+     
+      </div> 
+      <div class="mb-3">
+        <input type="text" class="search_jobType" name="jobType" id="search" placeholder="Search by Job Type"  />
+     
+      </div>
+       <div class="mb-3 ">
+        <button type="submit" class="btn btn-primary register submit_jobSeeker"
+        style="background-color: rgb(167, 46, 119); border-color: rgb(167, 46, 119);"
+        onmouseover="this.style.backgroundColor='white'; this.style.borderColor='rgb(167, 46, 119)'; this.style.color='rgb(167, 46, 119)'"
+        onmouseout="this.style.backgroundColor='rgb(167, 46, 119)'; this.style.color='white'">
+        Submit
+      </button>
+      </div> 
+      </form>
+      </div>
+      <div class="right">
+               <% if (typeof successMessage !== 'undefined' && successMessage) { %>
+  <div class="alert alert-success" role="alert" id="alertBox">
+    <%= successMessage %>
+  </div>
+<% } %>
+
+        
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-3">
+    <% if(jobs.length>0){ jobs.forEach(job => { %>
+      <div class="col">
+        <div class="card h-100 shadow-sm small-card">
+          
+          <% if (job.logo) { %>
+            <img src=<%= job.logo %> class="card-img-top" alt="Job Image">
+          <% } else { %>
+            <img src="/images/default-job.jpg" class="card-img-top" alt="Default Image">
+          <% } %>
+
+          <div class="card-body">
+             <h5 class="card-title"><%= job.company %></h5>
+            <h6 class="card-title"><%= job.jobType %></h6>
+            <p class="card-text">
+            
+              <strong>Location:</strong> <%= job.location %> 
+            </p>
+            <p class="card-text">
+            
+              <strong>Experience:</strong> <%= job.experience %> years
+            </p>
+             <p class="card-text">
+            
+              <strong>ID:</strong> <%= job.id %>
+            </p>
+            <div class="d-flex justify-content-between">
+              <a href="/apply_for_job/<%= job.id %>" class="btn btn-sm btn-outline-primary cardbtn">Apply</a>
+              
+              </form>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    <% }); } %>
+  </div>
+      </div>
+</main>
