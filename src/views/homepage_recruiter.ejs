@@ -34,7 +34,7 @@
               <strong>Experience:</strong> <%= job.experience %> years
             </p>
             <div class="d-flex justify-content-between">
-              <a href="/jobs/<%= job.id %>" class="btn btn-sm btn-outline-primary cardbtn">View</a>
+              <a href="/applicants/<%= job.id %>" class="btn btn-sm btn-outline-primary cardbtn">View</a>
               <a href="/editJob/<%=job.id%>" class="btn btn-sm btn-outline-warning cardbtn">Edit</a>
               <form action="/deleteJob/<%= job.id %>" method="POST" style="display:inline;">
                 <button type="submit" class="btn btn-sm btn-outline-danger cardbtn">Delete</button>

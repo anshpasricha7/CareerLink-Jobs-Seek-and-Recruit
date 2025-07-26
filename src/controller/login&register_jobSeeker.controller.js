@@ -3,6 +3,7 @@ import { sendEmail } from "../../mail.js";
 import recruiter_jobData from "../model/recruiter_jobPostData.model.js";
 import user_profile from "../model/jobSeeker_profile.js";
 import sendUserProfile from "../../mail_profile.js";
+import applicant from "../model/recruiter_applicants.js";
 
 export default class login_register_jobSeeker{
 
@@ -100,7 +101,9 @@ static sendProfile(req , res){
     
     sendUserProfile(profile , recruiter_email);
     console.log("Email and profile sent");
-
+    
+    applicant.addApplicant(profile.profilePic , req.session.name , req.session.email , profile.experience ,id);
+console.log(profile.profilePic);
     const job = recruiter_jobData.getData();
     
      res.locals.styles = '<link rel="stylesheet" href="/homepage_jobSeeker.css">';
@@ -110,6 +113,18 @@ static sendProfile(req , res){
         jobs: job,
         successMessage: "Applied Successfully"
     });
+}
+static viewApplicants(req, res){
+    const id=req.params.id;
+    const allapps=applicant.getData();
+
+   const apps=allapps.filter(function(aaps){
+        return aaps.id === id;
+    })
+
+    res.locals.styles = '<link rel="stylesheet" href="/recruiter_applicants.css">';
+    return res.render("recruiter_applicants" , {layout:'layout_recruiter' , applicants:apps});
+
 }
 
 

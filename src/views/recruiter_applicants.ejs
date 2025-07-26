@@ -1,0 +1,11 @@
+<main>
+  <h2>Applicants:</h2>
+<% if(applicants){applicants.forEach(function(applicant) { %>
+  <div class="applicants">
+    <img  src="/uploads/<%= applicant.image %>" alt="Profile Picture" class="profile_pic" />
+    <span class="applicant_name"><%= applicant.name %></span>
+    <span class="applicant_experience"><%= applicant.experience %> yrs</span>
+    <span class="applicant_email"><%= applicant.email %></span>
+  </div>
+<% })} %>
+</main>

@@ -65,7 +65,7 @@ server.get("/home_jobSeeker" ,auth,  (req, res) => {
 server.post("/filterByParameters" , auth , login_register_jobSeeker.filterJobs);
 server.post("/filterJobs_recruiter" ,auth, login_register_recruiter.filterJobsByCompanyOrType);
 server.get("/apply_for_job/:id" , auth , login_register_jobSeeker.sendProfile);
-
+server.get("/applicants/:id" , auth , login_register_jobSeeker.viewApplicants);
 
 
 server.listen(4600 ,  () => {
