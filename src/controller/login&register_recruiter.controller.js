@@ -70,7 +70,7 @@ export default class login_register_recruiter{
 
         static savechanges(req, res){
             const id=req.params.id;
-            recruiter_jobData.makechanges(id ,req.body);
+            recruiter_jobData.makechanges(id ,req.body , req.session.name, req.session.email);
             return res.redirect("/home_recruiter" );
 
 

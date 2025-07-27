@@ -42,12 +42,12 @@ export default class recruiter_jobData{
         return job;
     }
 
-    static makechanges(id , body){
+    static makechanges(id , body , name , email){
           const index = jobPostings.findIndex(function(job){
             return job.id===parseInt(id);
         });
-        jobPostings[index].name=body.name;
-        jobPostings[index].email=body.email;
+        jobPostings[index].name=name;
+        jobPostings[index].email=email;
         jobPostings[index].logo=body.logo;
         jobPostings[index].jobType=body.jobType;
         jobPostings[index].experience=body.experience;
